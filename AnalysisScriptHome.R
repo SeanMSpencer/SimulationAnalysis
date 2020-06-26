@@ -1,6 +1,7 @@
 library(readxl)
 library(utils)
 library(data.table)
+library(writexl)
 
 
 #choose directory for files to read in.
@@ -70,4 +71,5 @@ colnames(partsC.df) <- c("Mean partsC", "Median partsC", "Min partsC", "Max part
 #combind the resultant dataframes into one and use this to write out to an excel sheet
 combined.df <- cbind(upCount.df, MOS1.df, partsA.df, partsB.df, partsC.df)
 
-
+#write the file out too a blank excel file
+write_xlsx(combined.df, choose.files())
