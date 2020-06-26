@@ -2,7 +2,9 @@ library(readxl)
 library(utils)
 library(data.table)
 library(writexl)
+library(tictoc)
 
+tic()
 
 #choose directory for files to read in.
 file.list <- list.files(choose.dir(), full.names = TRUE)
@@ -73,3 +75,5 @@ combined.df <- cbind(upCount.df, MOS1.df, partsA.df, partsB.df, partsC.df)
 
 #write the file out too a blank excel file
 write_xlsx(combined.df, choose.files())
+
+toc()
